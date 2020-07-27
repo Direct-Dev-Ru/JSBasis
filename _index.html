@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>ModernJS Part I</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+  </header>
+
+  <main>
+    <div class="bs">
+      <div class="container">
+        <h1>Современный учебник по JavaScript (И.Кантор - в трех частях)</h1>
+        <hr>
+        <div id="divform1">
+          <form action="" class="form1">
+            <input type="number" name="inputnumber" id="inputnumber">
+            <br>
+            <button class="btn btn-primary" id="btnCalcRowSum">Вычислить сумму ряда</button>
+            <br>
+            <button class="btn btn-primary" id="btnCalcFactorial">Вычислить факториал</button>
+            <br>
+            <button class="btn btn-primary" id="btnCalcFib">Вычислить число Фибоначчи</button>
+          </form>
+          <div id="resultDiv">
+            <h3>Результат: </h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    //let promt_n = prompt('Enter n:');
+    //alert(sumTov1(promt_n)+' # '+sumTov2(promt_n)+' # '+sumTov3(promt_n));
+
+    $('#divform1').on('click', function (e) {
+      e.preventDefault();
+
+      let n = $('#inputnumber').val();
+
+      if (e.target.id === "btnCalcRowSum") {
+        let result1 = sumTov1(n);
+        let result2 = sumTov2(n);
+        let result3 = sumTov3(n);
+
+        $('#resultDiv').html(
+          `
+          <h3>Результат: </h3>
+          <p>Через цикл: ${result1}</p>
+          <p>Через рекурсию: ${result2}</p>
+          <p>Через формулу прогрессии: ${result3}</p>
+          `
+        );
+      } else if (e.target.id === "btnCalcFactorial"){
+        let result = factorial(n);
+
+        $('#resultDiv').html(
+          `
+          <h3>Результат: </h3>
+          <p>Факториал ${n} = ${result}</p>
+          `
+        );
+      } else if(e.target.id ==='btnCalcFib') {
+        let result = fib(n);
+
+        $('#resultDiv').html(
+          `
+          <h3>Результат: </h3>
+          <p>Число Фибоначчи для ${n} = ${result}</p>
+          `
+        );
+      }
+    });
+  </script>
+</body>
+
+</html>
