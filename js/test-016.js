@@ -1,14 +1,29 @@
 'use strict';
 
-let num = 20;
-let text = "First";
-const func = function showFirstMessage(text) {
-    let internalValue = text + num;
-    return internalValue;
-};
+var App = {};
 
-text = "Second fruit is very tasty";
-let aFunc = func(text);
+(function (app) {
+    
+    function MainModule(text,num){
+
+        this.text = text;
+        this.num = num;
+
+        this.Left = function () {
+            return this.text.slice(0,this.num);
+        };
+    }
+
+    app.MainModule = MainModule;
+
+})(App);
+
+const MainModule = App.MainModule;
+
+const mainModule = new MainModule("Some fruit are beautiful",20);
+
+const text = mainModule.Left();
+console.log(text);
 
 console.log(text.slice(
     text.indexOf('fruit'),
