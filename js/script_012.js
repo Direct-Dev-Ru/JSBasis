@@ -42,3 +42,4 @@ personalMovieDB.movies[lastFilm1]=lastFilmRating1;
 personalMovieDB.movies[lastFilm2]=lastFilmRating2;
 
 $('#Result').text(JSON.stringify(personalMovieDB));
+
