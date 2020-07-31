@@ -1,9 +1,14 @@
+
 'use strict';
 
 var App = {};
 
 (function (app) {
     
+    /**
+     * @param  {} text
+     * @param  {} num
+     */
     function MainModule(text,num){
 
         this.text = text;
@@ -30,3 +35,5 @@ console.log(text.slice(
     text.indexOf('fruit') + ('fruit').length));
 
 console.log(Math.round(Math.random() * 100));
+
+console.log(parseInt('v'));
