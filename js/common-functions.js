@@ -26,3 +26,17 @@ function pow(x, n) {
     }
     return result;
 }
+
+function deepObjectCopy(mainObj) {
+    let objCopy = {};
+    let key;
+    for (key in mainObj) {
+        const element = mainObj[key];
+        if (typeof(element) === "object") {
+            objCopy[key] = deepObjectCopy(element);
+        } else {
+            objCopy[key] = element;
+        }        
+    }
+    return objCopy;
+}

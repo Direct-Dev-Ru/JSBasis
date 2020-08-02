@@ -47,5 +47,50 @@ describe("pow function testing", function () {
         });
     });
 
+});
+
+describe('deepObjectCopy testing', () => {
+    
+    const makeRefObject = ()=>({
+        simpleProperty1: 10,
+        simpleProperty2: 'Ref',
+        objectProperty1:{
+            levelOneInnerSimpleProperty: 20
+        },
+        objectProperty2:{
+            levelOneObjectProperty: {
+                levelTwoInnerSimpleProperty: 30
+            }
+        }
+    });
+
+    const makeClonedObject = (objectToClone)=>{
+        
+        const clonedObject = deepObjectCopy(objectToClone);
+        clonedObject.simpleProperty1 = 20;
+        clonedObject.simpleProperty2 = 'Cloned';
+        clonedObject.objectProperty1.levelOneInnerSimpleProperty = 30;
+        clonedObject.objectProperty2.levelOneObjectProperty.levelTwoInnerSimpleProperty = 40;
+        return clonedObject;
+    };
+
+    it('Cloned object simple props are not equal', () => {  
+        const refObject = makeRefObject();
+        const clonedObject = makeClonedObject(refObject);   
+        //console.log(refObject,clonedObject);   
+        assert.notStrictEqual(refObject.simpleProperty1, clonedObject.simpleProperty1);
+    });
+    it('Cloned object level one object props are not equal', () => {       
+        const refObject = makeRefObject();
+        const clonedObject = makeClonedObject(refObject);    
+        assert.notStrictEqual(refObject.objectProperty1.levelOneInnerSimpleProperty, 
+                clonedObject.objectProperty1.levelOneInnerSimpleProperty);
+    });
+    it('Cloned object level two object props are not equal', () => {   
+        const refObject = makeRefObject();
+        const clonedObject = makeClonedObject(refObject);                
+        assert.notStrictEqual(refObject.objectProperty2.levelOneObjectProperty.levelTwoInnerSimpleProperty, 
+                clonedObject.objectProperty2.levelOneObjectProperty.levelTwoInnerSimpleProperty);
+    });
 
 });

@@ -1,18 +1,107 @@
-body{
+body {
     margin-left: 1rem;
 }
 
-button{
+
+input {
     margin-top: 1rem;
     min-width: 300px;
 }
 
-input{
-    margin-top: 1rem;
-    min-width: 300px;
-}
-
-h1, h2, h3{
+h1,
+h2,
+h3 {
     margin-top: 1rem;
 }
 
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+}
+
+button {
+    width: 80px;
+    height: 30px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    background-color: blue;
+    display: block;
+    margin-top: 10px;
+    border-radius: 100%;
+}
+
+.inhearts{
+    position: relative;
+    z-index: 1;
+    vertical-align: bottom
+    
+}
+
+.heart {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin-top: 10px; 
+    text-align:center;       
+}
+
+.heart:before,
+.heart:after {
+    position: absolute;
+    z-index: 0;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+.black {
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: black;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: #fff;
+}

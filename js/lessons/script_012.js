@@ -38,6 +38,7 @@ const lastFilm1 = prompt('Один из последних просмотрен�
 const lastFilm2 = prompt('Один из последних просмотренных фильмов?', ''),
     lastFilmRating2 = prompt('Ваша оценка этого фильма (1-5)?', '');
 
+
 personalMovieDB.movies[lastFilm1]=lastFilmRating1;
 personalMovieDB.movies[lastFilm2]=lastFilmRating2;
 
