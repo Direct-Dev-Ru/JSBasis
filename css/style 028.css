@@ -1,8 +1,19 @@
-*{
-    margin-top: 1rem;
+body {
     margin-left: 1rem;
-    
 }
+
+
+input {
+    margin-top: 1rem;
+    min-width: 300px;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 1rem;
+}
+
 .box {
     width: 150px;
     height: 150px;
@@ -30,17 +41,26 @@ button {
     border-radius: 100%;
 }
 
+.inhearts{
+    position: relative;
+    z-index: 1;
+    vertical-align: bottom
+    
+}
+
 .heart {
     display: inline-block;
     position: relative;
     width: 100px;
     height: 90px;
-    margin-top: 10px;
+    margin-top: 10px; 
+    text-align:center;       
 }
 
 .heart:before,
 .heart:after {
     position: absolute;
+    z-index: 0;
     content: "";
     left: 50px;
     top: 0;
@@ -83,16 +103,5 @@ button {
     background-color: black;
     margin-bottom: 30px;
     margin-top: 30px;
-    color: #fff;
-}
-
-.greydiv {
-    width: 150px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background-color: grey;
-    margin-bottom: 10px;
-    margin-top: 10px;
     color: #fff;
 }

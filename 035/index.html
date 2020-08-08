@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 1000px;
+        }
+
+        .box {
+            width: 150px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script defer src="modernizr-custom.js"></script>
+</head>
+
+<body>
+    <!-- Отложенные скрипты -->
+    <script defer src="script.js"></script>
+    <script defer src="test.js"></script> <!-- С defer загружаются последовательно -->
+    <!-- Загружай в фоновом режиме и выполняйся когда DOM дерево полностью готово -->
+
+    <!-- Отложенные скрипты -->
+    <script async src="script1.js"></script>
+    <script async src="test1.js"></script> <!-- С defer загружаются последовательно -->
+    <!-- Загружай в фоновом режиме и выполняйся когда DOM дерево полностью готово -->
+
+
+    <div class="box">
+        Touch me!
+    </div>
+
+    <p><span>Hello world!</span></p>
+    <p>Second Message</p>
+
+
+</body>
+
+</html>
